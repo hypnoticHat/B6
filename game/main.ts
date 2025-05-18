@@ -1,9 +1,21 @@
-import { gameLoop, createSprite, input, setMainSprite } from "../engine/engine.js";
+import { gameLoop, createSprite,createButton, input, setMainSprite } from "../engine/engine.js";
 
 window.onload = async () => {
   const hero = await createSprite("./assets/hero.png", 100, 100, 100, 100);
   setMainSprite(hero);
   requestAnimationFrame(gameLoop);
+
+createButton(220, 220, 80, 50, {
+    label: "←",
+    onMouseDown: () => input.left = true,
+    onMouseUp: () => input.left = false
+  });
+
+  createButton(320, 220, 80, 50, {
+    label: "→",
+    onMouseDown: () => input.right = true,
+    onMouseUp: () => input.right = false
+  });
 
   window.addEventListener("keydown", e => {
     if (e.key === "ArrowRight") input.right = true;

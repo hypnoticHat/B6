@@ -8,10 +8,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 import { Sprite } from './Sprite.js';
+import { Button } from './Button.js';
 const canvas = document.getElementById('game-canvas');
 const ctx = canvas.getContext('2d');
 const canvasWidth = 800;
-const canvasHeight = 600;
+const canvasHeight = 400;
 const canvasColor = '#000000';
 canvas.width = canvasWidth;
 canvas.height = canvasHeight;
@@ -39,6 +40,11 @@ export function createSprite(url, x, y, width, height) {
         add(sprite);
         return sprite;
     });
+}
+export function createButton(x, y, width, height, options) {
+    const btn = new Button(x, y, width, height, options);
+    add(btn);
+    return btn;
 }
 export function handleInput(sprite) {
     const speed = 100;

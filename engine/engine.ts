@@ -1,9 +1,10 @@
 import { Sprite } from './Sprite.js';
+import { Button } from './Button.js';
 
 const canvas = document.getElementById('game-canvas') as HTMLCanvasElement;
 const ctx = canvas.getContext('2d')!;
 const canvasWidth = 800;
-const canvasHeight = 600;
+const canvasHeight = 400;
 const canvasColor = '#000000';
 
 canvas.width = canvasWidth;
@@ -36,6 +37,23 @@ export async function createSprite(url: string, x: number, y: number, width: num
   const sprite = new Sprite(img, x, y, width, height);
   add(sprite);
   return sprite;
+}
+
+export function createButton(
+  x: number,
+  y: number,
+  width: number,
+  height: number,
+  options: {
+    onClick?: () => void;
+    onMouseDown?: () => void;
+    onMouseUp?: () => void;
+    label?: string;
+  }
+) {
+  const btn = new Button(x, y, width, height, options);
+  add(btn);
+  return btn;
 }
 
 export function handleInput(sprite: Sprite) {
