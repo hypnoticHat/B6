@@ -3,8 +3,8 @@ export class Sprite {
   public y: number;
   public width: number;
   public height: number;
-  public vy: number = 0;
-  public vx: number = 0;
+  public vectorY: number = 0;
+  public vectorX: number = 0;
   private image: HTMLImageElement;
 
   constructor(
@@ -22,8 +22,8 @@ export class Sprite {
   }
 
   update(dt: number): void {
-    this.x += this.vx * dt;
-    this.y += this.vy * dt;
+    this.x += this.vectorX * dt;
+    this.y += this.vectorY * dt;
   }
 
   draw(ctx: CanvasRenderingContext2D): void {

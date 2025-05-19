@@ -58,13 +58,13 @@ export function createButton(
 
 export function handleInput(sprite: Sprite) {
   const speed = 100;
-  sprite.vx = 0;
-  sprite.vy = 0;
+  sprite.vectorX = 0;
+  sprite.vectorY = 0;
 
-  if (input.left) sprite.vx = -speed;
-  if (input.right) sprite.vx = speed;
-  if (input.up) sprite.vy = -speed;
-  if (input.down) sprite.vy = speed;
+  if (input.left) sprite.vectorX = -speed;
+  if (input.right) sprite.vectorX = speed;
+  if (input.up) sprite.vectorY = -speed;
+  if (input.down) sprite.vectorY = speed;
 }
 
 let lastTime = performance.now();
