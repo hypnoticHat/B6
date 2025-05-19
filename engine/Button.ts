@@ -57,7 +57,7 @@ export class Button {
       offsetY >= this.y &&
       offsetY <= this.y + this.height
     ) {
-      this.onClick?.(); // click nếu thả chuột trong vùng
+      this.onClick?.();
     }
 
     this.onMouseUp?.();
